@@ -92,16 +92,16 @@ namespace _02_ProgramUI
             Console.WriteLine("--------------------");
 
             Console.WriteLine("Do you want to deal with this claim now? Type Y or N.");
-            string userAnswer = Console.ReadLine();
+            string userAnswer = Console.ReadLine().ToLower();
             switch (userAnswer)
             {
-                case "Y":
+                case "y":
                     {
                         _claimRepo.DealWithClaim();
                         Console.WriteLine("This claim has been deleted from the Directory.");
                         break;
                     }
-                case "N":
+                case "n":
                     {
                         Console.WriteLine("This claim has been returned to the Directory.");
                         break;

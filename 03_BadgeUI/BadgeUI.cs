@@ -64,6 +64,7 @@ namespace _03_BadgeUI
 
         private void AddBadge()
         {
+            Console.WriteLine("");
             Console.WriteLine("What is the number on the badge?");
             string badgeResponse = Console.ReadLine();
             int newBadgeNumber = int.Parse(badgeResponse);
@@ -81,7 +82,7 @@ namespace _03_BadgeUI
                     case "y":
                         {
                             Console.WriteLine("List a door that it needs access to: ");
-                            string addedDoorResponse = Console.ReadLine();
+                            doorResponse.Add(Console.ReadLine());
                             break;
                         }
                     case "n":
@@ -104,6 +105,7 @@ namespace _03_BadgeUI
             Console.WriteLine("What is the badge number to update?");
             string badgeResponse = Console.ReadLine();
             BadgeAccess(int.Parse(badgeResponse));
+            Console.WriteLine("");
             Console.WriteLine("What would you like to do? \n" +
                 "1. Remove a Door \n" +
                 "2. Add a Door \n");
@@ -143,11 +145,12 @@ namespace _03_BadgeUI
         private void BadgeAccess(int badgeResponse)
         {
             Dictionary<int, List<string>> badgeDict = _badgeRepo.SeeAllBadges();
+            Console.WriteLine("");
             Console.WriteLine($"{badgeResponse} has access to: ");
             Badge badge = _badgeRepo.GetBadgeByID(badgeResponse);
             foreach (string doorResponse in badge.DoorNames)
             {
-                Console.Write($"{doorResponse}");
+                Console.Write($"{doorResponse} \n");
             }
         }
 
