@@ -13,7 +13,7 @@ namespace _03_BadgeLibrary
     public class BadgeRepository
     {
 
-        //Methods Needed: AddBadge, EditBadge - (GetBadgeByName / AddDoorAccess / RemoveDoorAccess), SeeAllBadges
+        //Methods Needed: AddBadge, EditBadge - (GetBadgeByID / AddDoorAccess / RemoveDoorAccess), SeeAllBadges
      private Dictionary<int, List<string>> _badgeDict = new Dictionary<int, List<string>>();
 
         public void AddBadge(int badgeID, List<string> doorNames)
